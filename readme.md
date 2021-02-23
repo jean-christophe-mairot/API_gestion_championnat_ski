@@ -1,4 +1,4 @@
-- créez un nouveau référentiel
+**créez un nouveau référentiel**
 
 - git init
 - git add README.md
@@ -7,7 +7,7 @@
 - git remote add origin https://github.com/jean-christophe-mairot/API_gestion_championnat_ski.git
 - git push -u origin main
 
-- Ou pousser un référentiel existant depuis la ligne de commande
+**Ou pousser un référentiel existant depuis la ligne de commande**
 
 - git remote add origin https://github.com/jean-christophe-mairot/API_gestion_championnat_ski.git
 - git branch -M main
