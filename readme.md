@@ -12,3 +12,5 @@
 - git remote add origin https://github.com/jean-christophe-mairot/API_gestion_championnat_ski.git
 - git branch -M main
 - git push -u origin main
+
+! Yoann is here !
