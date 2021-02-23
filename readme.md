@@ -14,3 +14,9 @@
 - git push -u origin main
 
 : Yoann is here ;
+
+---
+
+**Liens utiles**
+
+- https://phpspreadsheet.readthedocs.io/en/latest/
