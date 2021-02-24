@@ -4,7 +4,7 @@
 
 **pour le push**
 
-- git add \*
+- git add \*(juste etoile)
 - git commit -m "la raison du commit"
 - git push -u origin main
 
