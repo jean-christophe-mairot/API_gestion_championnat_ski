@@ -4,7 +4,7 @@
 
 **pour le push**
 
-- git add \*(juste etoile)
+- git add \*
 - git commit -m "la raison du commit"
 - git push -u origin main
 
@@ -18,7 +18,7 @@
 
 **si je dev sur la branch jc et que je veux push sur main**
 
-- git add \*(juste etoile)
+- git add \*
 - git commit -m "la raison du commit"
 - git checkout main
 - git merge jc
