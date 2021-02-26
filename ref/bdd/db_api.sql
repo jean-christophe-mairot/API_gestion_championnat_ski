@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : jeu. 25 fév. 2021 à 22:54
+-- Généré le : ven. 26 fév. 2021 à 14:33
 -- Version du serveur :  10.4.14-MariaDB
 -- Version de PHP : 7.4.11
 
@@ -75,6 +75,17 @@ CREATE TABLE `participants` (
   `img_participant` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Déchargement des données de la table `participants`
+--
+
+INSERT INTO `participants` (`id_participant`, `nom_participant`, `prenom_participant`, `birth_participant`, `mail_participant`, `img_participant`) VALUES
+(1, 'Génique', 'Yoann', '09/01/1996', 'genique.yoann@outlook.com', 'https://www.phhsnews.com/img/how-to-2018/how-to-make-windows-photo-viewer-your-default-image-viewer-on-windows-10.png'),
+(2, 'Mairot', 'Jean-christophe', '15/05/1999', 'mairot.jean-christophe@gmail.com', 'https://www.phhsnews.com/img/how-to-2018/how-to-make-windows-photo-viewer-your-default-image-viewer-on-windows-10.png'),
+(3, 'Cherief', 'Saufiane', '25/08/1992', 'saufiane.cherief@gmail.com', 'https://www.phhsnews.com/img/how-to-2018/how-to-make-windows-photo-viewer-your-default-image-viewer-on-windows-10.png'),
+(4, 'Rameau', 'Célia', '13/04/2000', 'celia.rameau@gmail.com', 'https://www.phhsnews.com/img/how-to-2018/how-to-make-windows-photo-viewer-your-default-image-viewer-on-windows-10.png'),
+(5, 'Ligourel', 'Teedji', '15/02/1997', 'ligourel.teedji@gmail.com', 'https://www.phhsnews.com/img/how-to-2018/how-to-make-windows-photo-viewer-your-default-image-viewer-on-windows-10.png');
+
 -- --------------------------------------------------------
 
 --
@@ -143,7 +154,7 @@ ALTER TABLE `epreuves`
 -- AUTO_INCREMENT pour la table `participants`
 --
 ALTER TABLE `participants`
-  MODIFY `id_participant` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_participant` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT pour la table `passages`
