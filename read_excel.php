@@ -2,7 +2,9 @@
 include 'inc/header.php';
 include 'inc/fonctions.php';
 require 'vendor/autoload.php';
-
+//charge le namespace de PhpSpreadsheet
+use PhpOffice\PhpSpreadsheet\PhpSpreadsheet;
+//charge le namespace de la class Xlsx
 use PhpOffice\PhpSpreadsheet\Reader\Xlsx;
 
 
@@ -22,7 +24,7 @@ echo"<br>";
 echo "je suis la page de read excel";
 
 
-
+//utilisation de la fonction getAll 
 $allParticipants= getAll();
 
 ?> 
