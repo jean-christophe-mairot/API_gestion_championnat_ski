@@ -47,6 +47,8 @@
 - https://www.youtube.com/watch?v=4ULDJ5LfdwU&ab_channel=GemulChannel phpspradsheet
 - https://github.com/jean-christophe-mairot/PHP-POO-MVC
 
+- https://mkyong.com/java/how-to-read-and-parse-csv-file-in-java/
+
 - Yoann is here
 - Celia is here
 - Teedji is here
