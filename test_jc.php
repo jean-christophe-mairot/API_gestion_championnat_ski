@@ -21,7 +21,27 @@ for ($row = 1; $row <= $highestRow; ++$row) {
         echo '<td>' . $value . '</td>' . PHP_EOL;
     }
     echo '</tr>' . PHP_EOL;
+    if (! empty($nom_participant) || ! empty($prenom_participant) || ! empty( $birth_participant) || ! empty($mail_participant)) {
+        $query = "INSERT INTO participants(nom_participant, prenom_participant, birth_participant, mail_participant) values(?,?,?,?)";
+        $paramType = "spreadsheet";
+        $paramArray = array(
+            $nom_participant,
+            $prenom_participant,
+            $birth_participant,
+            $mail_participant
+        );
+        $insertId = $bdd->insert($query, $paramType, $paramArray);
+
+        if (! empty($insertId)) {
+            $type = "success"; 
+            $message = "Excel Data Imported iunto the Database";
+        }else {
+            $type = "error";
+            $message = "Problem in Importing Excel Data";
+        }
+    }
 }
+
 echo '</table>' . PHP_EOL;
 ?> 
 
