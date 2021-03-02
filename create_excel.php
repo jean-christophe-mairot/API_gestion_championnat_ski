@@ -68,7 +68,7 @@ foreach($allParticipants as $participant){
 //instanciation de la class Xlsx qui utilise l'instance de spreadsheet
 $writer = new Xlsx($spreadsheet);
 //ecrit le fichier dans le directory : là c au même niveau que create_excel.php
-$writer->save('hello world.xlsx');
+$writer->save('creatXl.xlsx');
 
 
 

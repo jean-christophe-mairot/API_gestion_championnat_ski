@@ -6,15 +6,13 @@ require 'vendor/autoload.php';
 use PhpOffice\PhpSpreadsheet\PhpSpreadsheet;
 //charge le namespace de la class Xlsx
 use PhpOffice\PhpSpreadsheet\Reader\Xlsx;
-
-
-
-
 // lecture du xlsx
 $reader = new Xlsx();
 $reader->setReadDataOnly(true);
-$spreadsheet = $reader->load("hello world.xlsx");
+$spreadsheet = $reader->load("creatXl.xlsx");
 
+
+var_dump($spreadsheet);
 // 
 //$reader = new \PhpOffice\PhpSpreadsheet\Reader\Html();
 //$spreadsheet = $reader->load("05featuredemo.html");
