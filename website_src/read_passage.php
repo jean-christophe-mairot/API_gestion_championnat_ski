@@ -9,10 +9,10 @@ try{
     die();
 } 
 
-$sql = 'SELECT * FROM `passages`,`participants`,`categories`';
+$sql = 'SELECT id_categorie, id_epreuve, id_participant, MIN(meilleur_temp) FROM `passages` GROUP BY id_participant LIMIT 3';
+// $sql = 'SELECT MIN(meilleur_temp) FROM passages ';
 
-// $rg=[$sql, $joint_ep, $joint_ca, $joint_pa];
-
+// `participants`,`categories`,
 // On prepare la requete
 $query = $db->prepare($sql);
 // on execute la requete
@@ -37,7 +37,8 @@ $db = null;
 
 
 <?php foreach ($result as $results): extract($results) ?>
-<?= $nom_participant?>
+<p><?= $meilleur_temp?></p>
+<!-- <?= $prenom_participant?> -->
 <?php endforeach ?>  
 
 
