@@ -1,30 +1,34 @@
 <?php
 require_once ("inc/header.php");
 ?>
-
-<form method="POST" action="crudParticipant.php" enctype="multipart/form-data">
-    <div>    
-        <label for="Nom">Nom</label> <br>
-        <input type="text" name="nom_participant">
-    </div>
-    <div>    
-        <label for="Prenom">Prenom</label> <br>
-        <input type="text" name="prenom_participant">
-    </div>
-    <div>    
-        <label for="Date">Date de naissance</label> <br>
-        <input type="date" name="birth_participant">
-    </div>
-    <div>    
-        <label for="mail">Mail</label> <br>
-        <input type="email" name="mail_participant">
-    </div>
-    <div>    
-        <label for="photo">Photo</label> <br>
-        <input type="file" name="img_participant">
-    </div> <br>
-    <button type="submit">Ajouter</button>
-</form>
+<div class="position-absolute top-50 start-50 translate-middle border">
+    <h1 class="text-center color">Formulaire Participant</h1>
+    <form method="POST" action="crudParticipant.php" enctype="multipart/form-data" class="row g-3 container">
+        <div class="form-floating col-md-6">     
+            <input class="form-control" type="text" id="floatingInput" name="nom_participant" placeholder="Nom">
+            <label for="floatingInput" class="color">Nom</label> <br>
+        </div>
+        <div class=" form-floating col-md-6">    
+            <input class="form-control" type="text" name="prenom_participant" placeholder="Prenom">
+            <label for="floatingInput" class="color">Prenom</label> <br>
+        </div>
+        <div class="form-floating col-md-6">    
+            <input type="date" class="form-control" name="birth_participant" placeholder="Date de naissance">
+            <label for="floatingInput" class="color">Date de naissance</label> <br>
+        </div>
+        <div class="form-floating col-md-6">    
+            <input class="form-control" type="email" name="mail_participant" placeholder="Email">
+            <label for="floatingInput" class="color">Mail</label> <br>
+        </div>    
+        <div>
+            <label class="form-label fs-5 color fw-bold" for="formFileLg">Photo du Participant</label> <br>  
+            <input class="form-control form-control-lg" type="file" name="img_participant"> 
+        </div>
+        <div class="d-grid gap-2">
+            <button class="btn btn-primary" type="submit">Ajouter</button>
+        </div>
+    </form>
+</div>
 
 <?php
 require_once ("inc/footer.php");
