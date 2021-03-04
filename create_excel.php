@@ -9,7 +9,7 @@ use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 
 //recup dans la bdd tous les participants 
-$allParticipants= getAll();
+$allParticipants= getResult();
 //var_dump($allParticipants);
 //instanciation de la class Spreadsheet
 $spreadsheet = new Spreadsheet();
@@ -32,19 +32,39 @@ $colC = 0;
 $colD = 0; 
 //colonne des E mail_participant
 $colE = 0; 
+//colonne des D birth_participant
+$colF = 0; 
+//colonne des E mail_participant
+$colG = 0; 
 
 foreach($allParticipants as $participant){
     
-   //incrementation de la colonne des A pour les id_participant
+   // //incrementation de la colonne des A pour les id_participant
+   // $colA =$colA+1;
+   // //incrementation de la colonne des B pour les nom_participant
+   // $colB =$colB+1;
+   // //incrementation de la colonne des C pour les prenom_participant
+   // $colC =$colC+1; 
+   // //incrementation de la colonne des D pour les birth_participant
+   // $colD =$colD+1;
+   // //incrementation de la colonne des E pour les mail_participant
+   // $colE =$colE+1;
+
+
+   //incrementation de la colonne des A pour les nom_epreuve
    $colA =$colA+1;
-   //incrementation de la colonne des B pour les nom_participant
+   //incrementation de la colonne des B pour les type
    $colB =$colB+1;
-   //incrementation de la colonne des C pour les prenom_participant
+   //incrementation de la colonne des C pour les nom_participant
    $colC =$colC+1; 
-   //incrementation de la colonne des D pour les birth_participant
+   //incrementation de la colonne des D pour les prenom_participant
    $colD =$colD+1;
-   //incrementation de la colonne des E pour les mail_participant
+   //incrementation de la colonne des E pour les temp_1
    $colE =$colE+1;
+   //incrementation de la colonne des E pour les temp_2
+   $colF =$colF+1;
+   //incrementation de la colonne des E pour les meilleur_temp
+   $colG =$colG+1;
 
     //concatenation nom des col et numero de col   
     $cellA='A'.$colA;
@@ -52,14 +72,18 @@ foreach($allParticipants as $participant){
     $cellC='C'.$colC;
     $cellD='D'.$colD;
     $cellE='E'.$colE;
+    $cellF='F'.$colF;
+    $cellG='G'.$colG;
 
     //set les valeurs dans les cellules
     $spreadsheet->getActiveSheet()
-             ->setCellValue($cellA,$participant["id_participant"])
-             ->setCellValue($cellB,$participant["nom_participant"])
-             ->setCellValue($cellC,$participant["prenom_participant"])
-             ->setCellValue($cellD,$participant["birth_participant"])
-             ->setCellValue($cellE,$participant["mail_participant"])
+             ->setCellValue($cellA,$participant["nom_epreuve"])
+             ->setCellValue($cellB,$participant["type"])
+             ->setCellValue($cellC,$participant["nom_participant"])
+             ->setCellValue($cellD,$participant["prenom_participant"])
+             ->setCellValue($cellE,$participant["temp_1"])
+             ->setCellValue($cellF,$participant["temp_2"])
+             ->setCellValue($cellG,$participant["meilleur_temp"])
              ;
 
          
