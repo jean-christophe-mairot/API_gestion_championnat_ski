@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : ven. 26 fév. 2021 à 14:33
+-- Généré le : jeu. 04 mars 2021 à 09:30
 -- Version du serveur :  10.4.14-MariaDB
 -- Version de PHP : 7.4.11
 
@@ -103,6 +103,17 @@ CREATE TABLE `passages` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
+-- Déchargement des données de la table `passages`
+--
+
+INSERT INTO `passages` (`id_passage`, `temp_1`, `temp_2`, `meilleur_temp`, `id_categorie`, `id_epreuve`, `id_participant`) VALUES
+(5, 1.25, 1.95, 1.25, 1, 2, 1),
+(6, 3.25, 1.35, 1.35, 2, 2, 2),
+(7, 7.3, 5.6, 5.6, 1, 2, 4),
+(8, 6.2, 1.4, 1.4, 1, 2, 3),
+(9, 1.55, 1.92, 1.55, 1, 2, 5);
+
+--
 -- Index pour les tables déchargées
 --
 
@@ -160,7 +171,7 @@ ALTER TABLE `participants`
 -- AUTO_INCREMENT pour la table `passages`
 --
 ALTER TABLE `passages`
-  MODIFY `id_passage` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_passage` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Contraintes pour les tables déchargées
