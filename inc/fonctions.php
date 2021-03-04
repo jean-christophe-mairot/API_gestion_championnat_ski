@@ -31,8 +31,8 @@ function getParticpant()
 {
     $bdd = getBdd();
     $result = $bdd->query("SELECT id_participant, nom_participant, prenom_participant FROM participants");
-    $annonces = $result->fetchAll(PDO::FETCH_ASSOC);
-    return $annonces;
+    $annonces_pa = $result->fetchAll(PDO::FETCH_ASSOC);
+    return $annonces_pa;
 }
 
 // Récupération de l'id, nom, date de l'épreuve
@@ -40,8 +40,8 @@ function getEpreuve()
 {
     $bdd = getBdd();
     $result = $bdd->query("SELECT id_epreuve, nom_epreuve, date_epreuve FROM epreuves");
-    $annonces = $result->fetchAll(PDO::FETCH_ASSOC);
-    return $annonces;
+    $annonces_ep = $result->fetchAll(PDO::FETCH_ASSOC);
+    return $annonces_ep;
 }
 
 // Récupération de l'id, type de catégorie
@@ -49,8 +49,8 @@ function getCategorie()
 {
     $bdd = getBdd();
     $result = $bdd->query("SELECT id_categorie, type FROM categories");
-    $annonces = $result->fetchAll(PDO::FETCH_ASSOC);
-    return $annonces;
+    $annonces_ca = $result->fetchAll(PDO::FETCH_ASSOC);
+    return $annonces_ca;
 }
 
 //--------------------------------------------------------
