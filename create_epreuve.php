@@ -9,14 +9,14 @@ try{
     echo 'Erreur : '. $e->getMessage();
     die();
 }
-var_dump($_POST);
+// var_dump($_POST);
 if($_POST){
     if(isset($_POST['nom_epreuve']) && !empty($_POST['nom_epreuve'])
     &&(isset($_POST['date_epreuve']) && !empty($_POST['date_epreuve']))
     && isset($_POST['id_categorie']) && !empty($_POST['id_categorie'])){
 
         // On nettoie les données envoyées
-        
+        // $id_epreuve = strip_tags($_POST['id_epreuve']);
         $nom_epreuve = strip_tags($_POST['nom_epreuve']);
         $date_epreuve = strip_tags($_POST['date_epreuve']);
         $id_categorie = strip_tags($_POST['id_categorie']);
