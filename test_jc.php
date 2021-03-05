@@ -30,7 +30,7 @@ for ($row = 1; $row <= $highestRow; ++$row) {
       
         $ligne[]=$value;
         echo '<td>' . $value . '</td>' . PHP_EOL;
-         
+        var_dump($value);   
     }
     $values[]=$ligne;
     echo '</tr>' . PHP_EOL;
@@ -46,26 +46,42 @@ for ($i=0; $i <$highestRow ; $i++) {
     $bdd = getBdd();
     $input=$i;
     $tabs=$values[$input];
-
+var_dump($values);
     $tab=$tabs[0];
-    $id_participant=$tab;
+    $nom_epreuve=$tab;
+
     $tab1=$tabs[1];
-    $nom_participant=$tab1;
+    $type=$tab1;
+
     $tab2=$tabs[2];
-    $prenom_participant=$tab2;
+    $nom_participant=$tab2;
+
     $tab3=$tabs[3];
-    $birth_participant=$tab3;
+    $prenom_participant=$tab3;
+
     $tab4=$tabs[4];
-    $mail_participant=$tab4;
+    $temp_1=$tab4;
 
-    $request=$bdd->prepare("UPDATE participants 
-                            SET nom_participant='$nom_participant',
-                                prenom_participant='$prenom_participant',
-                                birth_participant='$birth_participant',
-                                mail_participant='$mail_participant'
+    $tab5=$tabs[5];
+    $temp_2=$tab5;
 
-                            WHERE  id_participant = $id_participant");
-    $request->execute();  
+    $tab6=$tabs[6];
+    $meilleur_temp=$tab6;
+
+    $request=$bdd->prepare("INSERT INTO result(`nom_epreuve`, `type`, `nom_participant`, `prenom_participant`, `temp_1`, `temp_2`, `meilleur_temp`)
+                            VALUES(?,?,?,?,?,?,?,?)");
+    $request->execute(array($nom_epreuve,$type,$nom_participant,$prenom_participant,$temp_1,$temp_2,$meilleur_temp));
+    
+    // UPDATE participants 
+    //                         SET nom_epreuve
+    //                             nom_participant='$nom_participant',
+    //                             prenom_participant='$prenom_participant',
+    //                             birth_participant='$birth_participant',
+    //                             mail_participant='$mail_participant'
+
+    //                         WHERE  id_participant = $id_participant
+      
+    
 
 
 

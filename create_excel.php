@@ -39,18 +39,6 @@ $colG = 0;
 
 foreach($allParticipants as $participant){
     
-   // //incrementation de la colonne des A pour les id_participant
-   // $colA =$colA+1;
-   // //incrementation de la colonne des B pour les nom_participant
-   // $colB =$colB+1;
-   // //incrementation de la colonne des C pour les prenom_participant
-   // $colC =$colC+1; 
-   // //incrementation de la colonne des D pour les birth_participant
-   // $colD =$colD+1;
-   // //incrementation de la colonne des E pour les mail_participant
-   // $colE =$colE+1;
-
-
    //incrementation de la colonne des A pour les nom_epreuve
    $colA =$colA+1;
    //incrementation de la colonne des B pour les type
@@ -85,16 +73,13 @@ foreach($allParticipants as $participant){
              ->setCellValue($cellF,$participant["temp_2"])
              ->setCellValue($cellG,$participant["meilleur_temp"])
              ;
-
-         
+        
 }
 
 //instanciation de la class Xlsx qui utilise l'instance de spreadsheet
 $writer = new Xlsx($spreadsheet);
 //ecrit le fichier dans le directory : là c au même niveau que create_excel.php
 $writer->save('creatXl.xlsx');
-
-
 
 //var_dump($writer);
 
