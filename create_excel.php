@@ -3,88 +3,176 @@ require_once "inc/header.php";
 include 'inc/fonctions.php';
 require 'vendor/autoload.php';
 
+
 //charge le namespace de la class Spreadsheet
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 //charge le name space de la class Xlsx
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 
-//recup dans la bdd tous les participants 
-$allParticipants= getResult();
-//var_dump($allParticipants);
+
+
+
+//-------------------------------------------------------------------------------------
+//-----------------------    INSTANCE DE SPREADSHEET-----------------------------------
+
+
 //instanciation de la class Spreadsheet
 $spreadsheet = new Spreadsheet();
 //get la feuille active
 $sheet = $spreadsheet->getActiveSheet();
 
+
+//--------------------------------------------------------------------------------------
+//--------------------------------------FONT--------------------------------------------
+//changer la font par defaut utilisée dans le fichier excel généré
 //set default font
+
 $spreadsheet->getDefaultStyle()
             ->getFont()
             ->setName('Bahnschrift')
             ->setSize(10);
+//------------------------------------------------------------------------------------
+//----------------------- CELLULE TITRE COLONNE---------------------------------------
+//------------------------------------------------------------------------------------
+
+$spreadsheet->getActiveSheet()
+->setCellValue('A1',"id_participants")
+->setCellValue('B1',"Nom")
+->setCellValue('C1',"Prenom")
+->setCellValue('D1',"id_epreuve")
+->setCellValue('E1',"Epreuve")
+->setCellValue('F1',"Date")
+->setCellValue('G1',"Temps 1")
+->setCellValue('H1',"Temps 2")
+->setCellValue('I1',"Meilleur Temps")
+->setCellValue('J1',"id_categorie")
+->setCellValue('K1',"Type")
+
+;
+
+//------------------------------------------------------------------------------------
+//---------------------------------  PARTICIPANTS ------------------------------------
+//------------------------------------------------------------------------------------
+//recuperation par l'id des participants
+$recupIdParticipants = $_POST['id_participant'];
 
 //si on veut afficher tous les participants
-$colA = 0; 
+$colA = 1; 
 //colonne des B pour nom_participant
-$colB = 0; 
+$colB = 1; 
 //colonne des C pour prenom_participant
-$colC = 0; 
-//colonne des D birth_participant
-$colD = 0; 
-//colonne des E mail_participant
-$colE = 0; 
-//colonne des D birth_participant
-$colF = 0; 
-//colonne des E mail_participant
-$colG = 0; 
+$colC = 1; 
+//pour l'epreuve lié à chaque participant
+$colD = 1;
+$colE = 1;
+$colF = 1;
+$colJ = 1;
+$colK = 1;
+foreach ($recupIdParticipants as $recupIdParticipant) {
 
-foreach($allParticipants as $participant){
-    
-   //incrementation de la colonne des A pour les nom_epreuve
+   
+   $id_participant = $recupIdParticipant;
+   $generateParticipants=getFromGenerateParticipant($id_participant);
+    //incrementation de la colonne des A pour les nom_epreuve
    $colA =$colA+1;
-   //incrementation de la colonne des B pour les type
-   $colB =$colB+1;
-   //incrementation de la colonne des C pour les nom_participant
-   $colC =$colC+1; 
-   //incrementation de la colonne des D pour les prenom_participant
+   //concatenation nom des col et numero de col   
+   $cellA='A'.$colA;
+
+   $spreadsheet->getActiveSheet()
+   ->setCellValue($cellA,$id_participant);
+
+   //set les valeurs dans les cellules 
+   foreach ($generateParticipants as $allparticipant) {
+  
+      //incrementation de la colonne des B pour les type
+      $colB =$colB+1;
+      //incrementation de la colonne des C pour les nom_participant
+      $colC =$colC+1; 
+
+      //concatenation nom des col et numero de col 
+      $cellB='B'.$colB;
+      $cellC='C'.$colC;
+  
+      $spreadsheet->getActiveSheet()
+      ->setCellValue($cellB,$allparticipant["nom_participant"])
+      ->setCellValue($cellC,$allparticipant["prenom_participant"])
+      ;
+   }
+   //---------------------------------------------------------------------------
+   //-------------------------- EPREUVE ----------------------------------------
+   //---------------------------------------------------------------------------
+   
+   $recupIdEpreuves=$_POST['epreuve_select'];
+   $generateEpreuves=getFromGenerateEpreuve($recupIdEpreuves);
+   
+   //incrémentation de la colonne D à F
    $colD =$colD+1;
-   //incrementation de la colonne des E pour les temp_1
-   $colE =$colE+1;
-   //incrementation de la colonne des E pour les temp_2
-   $colF =$colF+1;
-   //incrementation de la colonne des E pour les meilleur_temp
-   $colG =$colG+1;
+  
+   //concatenation nom des col et numero de col
+   $cellD='D'.$colD;
+   
+   //renseignement des col
+   $spreadsheet->getActiveSheet()
+   ->setCellValue($cellD,$recupIdEpreuves);
 
-    //concatenation nom des col et numero de col   
-    $cellA='A'.$colA;
-    $cellB='B'.$colB;
-    $cellC='C'.$colC;
-    $cellD='D'.$colD;
-    $cellE='E'.$colE;
-    $cellF='F'.$colF;
-    $cellG='G'.$colG;
+   foreach ($generateEpreuves as $epreuve) {
+  
+      //incrementation de la colonne des E
+      $colE =$colE+1;
+      //incrementation de la colonne des F
+      $colF =$colF+1; 
 
-    //set les valeurs dans les cellules
+      //concatenation nom des col et numero de col 
+      $cellE='E'.$colE;
+      $cellF='F'.$colF;
+  
+      $spreadsheet->getActiveSheet()
+      ->setCellValue($cellE,$epreuve["nom_epreuve"])
+      ->setCellValue($cellF,$epreuve["date_epreuve"])
+      ;
+   }
+   //---------------------------------------------------------------------------
+   //-------------------------- CATEGORIE ----------------------------------------
+   //---------------------------------------------------------------------------
+   
+   $recupIdCategories=$_POST['categorie-select'];
+   $generateCategories=getFromGenerateCategorie($recupIdCategories);
+   test($generateCategories);
+
+    //incrémentation de la colonne D à F
+    $colJ =$colJ+1;
+  
+    //concatenation nom des col et numero de col
+    $cellJ='J'.$colJ;
+    
+    //renseignement des col
     $spreadsheet->getActiveSheet()
-             ->setCellValue($cellA,$participant["nom_epreuve"])
-             ->setCellValue($cellB,$participant["type"])
-             ->setCellValue($cellC,$participant["nom_participant"])
-             ->setCellValue($cellD,$participant["prenom_participant"])
-             ->setCellValue($cellE,$participant["temp_1"])
-             ->setCellValue($cellF,$participant["temp_2"])
-             ->setCellValue($cellG,$participant["meilleur_temp"])
-             ;
-        
+    ->setCellValue($cellJ,$recupIdCategories);
+ 
+    foreach ($generateCategories as $categorie) {
+   
+       //incrementation de la colonne des E
+       $colK =$colK+1;
+       //concatenation nom des col et numero de col 
+       $cellK='K'.$colK;
+       
+       $spreadsheet->getActiveSheet()
+       ->setCellValue($cellK,$categorie["type"])  
+       ;
+    }
 }
+
+
+
+//-----------------------------------------------------------------------------
+//------------------------ execution et génération du fichier slsx ------------
+//-----------------------------------------------------------------------------
 
 //instanciation de la class Xlsx qui utilise l'instance de spreadsheet
 $writer = new Xlsx($spreadsheet);
 //ecrit le fichier dans le directory : là c au même niveau que create_excel.php
 $writer->save('creatXl.xlsx');
 
-//var_dump($writer);
-
-echo"<br>";
-echo "je suis sur la page de creat excel";
 ?>
 
 <!-- contenu -->
