@@ -56,6 +56,22 @@ function getCategorie()
 //--------------------------------------------------------
 //--------------------------------------------------------
 //--------------------------------------------------------
+function getFromGenerateXlsx($id_participant) {
+    $bdd = getBdd();
+    $result = $bdd->query("SELECT nom_participant, prenom_participant FROM participants WHERE id_participant=$id_participant");
+    $allParticipants = $result->fetchall();
+    return $allParticipants;
+}
 
+// fonction de test
+function test($arg){
+    
+    echo "<pre>";
+    var_dump($arg);
+    echo "</pre>";
+    echo "<br>";
+
+
+}
 
 ?>

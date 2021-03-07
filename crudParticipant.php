@@ -1,15 +1,7 @@
 <?php
+require 'inc/bdd.php';
 
-// Connexion à une base de données
-try{
-    // Connexion base de donnée
-    $db = new PDO('mysql:host=127.0.0.1;dbname=db_api', 'root','');
-    $db->exec('SET NAMES "UTF8"'); /* execute la Table de caractere */
-/*Capture permet un message d'erreur si pas connecter et représente une erreur émise par PDO*/
-}catch (PDOException $e){
-    echo 'Erreur : '. $e->getMessage(); //récupere le message de l'exception
-    die(); /*arreter l'execution du code*/
-}
+$db = getBdd();
 
 if($_POST && $_FILES){
     if(isset($_POST['nom_participant']) && !empty($_POST['nom_participant'])
@@ -47,37 +39,3 @@ if($_POST && $_FILES){
 
 ?>
 
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-<form method="POST" action="" enctype="multipart/form-data">
-    <div>    
-        <label for="Nom">Nom</label> <br>
-        <input type="text" name="nom_participant">
-    </div>
-    <div>    
-        <label for="Prenom">Prenom</label> <br>
-        <input type="text" name="prenom_participant">
-    </div>
-    <div>    
-        <label for="Date">Date de naissance</label> <br>
-        <input type="date" name="birth_participant">
-    </div>
-    <div>    
-        <label for="mail">Mail</label> <br>
-        <input type="email" name="mail_participant">
-    </div>
-    <div>    
-        <label for="photo">Photo</label> <br>
-        <input type="file" name="img_participant">
-    </div> <br>
-    <button type="submit">Ajouter</button>
-</form>
-</body>
-</html> -->
