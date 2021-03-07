@@ -16,6 +16,14 @@ $spreadsheet = new Spreadsheet();
 //get la feuille active
 $sheet = $spreadsheet->getActiveSheet();
 
+//test pour le post de l'epreuve
+echo "<pre>";
+var_dump($_POST);
+echo "</pre>";
+//recupertion du post
+echo $_POST['epreuve-select'];
+
+
 //set default font
 $spreadsheet->getDefaultStyle()
             ->getFont()
