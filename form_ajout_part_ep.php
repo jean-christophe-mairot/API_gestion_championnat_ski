@@ -13,8 +13,8 @@ $epreuves = getEpreuve();
     <form action="create_excel.php" method="POST">
         <div>
             <!-- Pour epreuve + cate pour aller chercher la bonne cate + ep c'est un READ SELECT -->
-            <label for="epreuve-select">Epreuve: </label><br>
-                <select name="epreuve-select" id="epreuve-select"> 
+            <label for="epreuve_select">Epreuve: </label><br>
+                <select name="epreuve_select" id="epreuve_select"> 
                 <?php foreach ($epreuves as $epreuve):?>
                     <option value="<?=$epreuve['id_epreuve']?>"><?=$epreuve['nom_epreuve']?></option> 
                 <?php endforeach ?>

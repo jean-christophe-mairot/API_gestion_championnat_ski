@@ -54,14 +54,29 @@ function getCategorie()
 }
 
 //--------------------------------------------------------
+//------------------Pour le Form qui génère --------------
+//---------------la feuille excel de l'épreuve------------
 //--------------------------------------------------------
-//--------------------------------------------------------
-function getFromGenerateXlsx($id_participant) {
+function getFromGenerateParticipant($id_participant) {
     $bdd = getBdd();
     $result = $bdd->query("SELECT nom_participant, prenom_participant FROM participants WHERE id_participant=$id_participant");
     $allParticipants = $result->fetchall();
     return $allParticipants;
 }
+
+function getFromGenerateEpreuve($id_epreuve) {
+    $bdd = getBdd();
+    $result = $bdd->query("SELECT nom_epreuve, date_epreuve FROM epreuves WHERE id_epreuve=$id_epreuve");
+    $allEpreuves = $result->fetchall();
+    return $allEpreuves;
+}
+function getFromGenerateCategorie($id_categorie) {
+    $bdd = getBdd();
+    $result = $bdd->query("SELECT type FROM categories WHERE id_categorie=$id_categorie");
+    $allcategories = $result->fetchall();
+    return $allcategories;
+}
+
 
 // fonction de test
 function test($arg){
