@@ -3,10 +3,6 @@ include 'inc/bdd.php';
 include 'inc/header.php';
 require 'vendor/autoload.php';
 
-
-
-echo "page de test jc";
-
 $reader = \PhpOffice\PhpSpreadsheet\IOFactory::createReader('Xlsx');
 $reader->setReadDataOnly(TRUE);
 $spreadsheet = $reader->load("creatXlresult.xlsx");
@@ -43,35 +39,29 @@ echo '</table>' . PHP_EOL;
 //----------------------------------------------------------------------------------------------------------------------
 //--------------------------------une boucle avec incrementation de values----------------------------------------------
 //-----------------------------------------------------------------------------------------------------------------------
+$bdd = getBdd();
+for ($i=1; $i <$highestRow ; $i++) { 
+    
+  
+    $tabs=$values[$i];
+    //id participant
+    $id_participant=$tabs[0];
 
-for ($i=0; $i <$highestRow ; $i++) { 
-    $bdd = getBdd();
-    $input=$i;
-    $tabs=$values[$input];
+    $id_epreuve=$tabs[3];
 
-    $tab=$tabs[0];//id participant
-    $id_participant=$tab;
+    $temp_1=$tabs[6];
+    // var_dump($temp_1);
 
-    $tab3=$tabs[3];
-    $id_epreuve=$tab3;
+    $temp_2=$tabs[7];
 
-    $tab6=$tabs[6];
-    $temp_1=$tab6;
-    var_dump($temp_1);
+    $meilleur_temp=$tabs[8];
 
-    $tab7=$tabs[7];
-    $temp_2=$tab7;
-
-    $tab8=$tabs[8];
-    $meilleur_temp=$tab8;
-
-    $tab9=$tabs[9];
-    $id_categorie=$tab9;
+    $id_categorie=$tabs[9];
 
     $request=$bdd->prepare("INSERT INTO passages (`id_epreuve`, `id_categorie`, `id_participant`, `temp_1`, `temp_2`, `meilleur_temp`)
                             VALUES(?,?,?,?,?,?)");
     $request->execute(array($id_epreuve,$id_categorie,$id_participant,$temp_1,$temp_2,$meilleur_temp));
-      
+    // $request->debugDumpParams();
 
 }
 

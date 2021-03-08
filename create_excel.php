@@ -47,7 +47,6 @@ $spreadsheet->getActiveSheet()
 ->setCellValue('I1',"Meilleur Temps")
 ->setCellValue('J1',"id_categorie")
 ->setCellValue('K1',"Type")
-
 ;
 
 //------------------------------------------------------------------------------------
@@ -137,7 +136,7 @@ foreach ($recupIdParticipants as $recupIdParticipant) {
    
    $recupIdCategories=$_POST['categorie-select'];
    $generateCategories=getFromGenerateCategorie($recupIdCategories);
-   test($generateCategories);
+  
 
     //incrémentation de la colonne D à F
     $colJ =$colJ+1;
