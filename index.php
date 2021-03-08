@@ -1,5 +1,5 @@
 <?php
-require_once ("inc/header.php");
+require_once 'inc/header.php';
 ?>
 <div class="position-absolute top-50 start-50 translate-middle border">
     <h1 class="text-center color">Formulaire Participant</h1>
@@ -31,5 +31,5 @@ require_once ("inc/header.php");
 </div>
 
 <?php
-require_once ("inc/footer.php");
+require_once 'inc/footer.php';
 ?>
