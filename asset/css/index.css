@@ -1,24 +1,32 @@
-body{
-    background-image: url("../img/ski.jpg");
-    background-size: cover;
+body {
+	/* background-image: url("../img/ski.jpg");
+	background-size: cover;
+	background-repeat: no-repeat; */
+}
+.bg-image {
+	background-image: url("../img/ski.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	width: 100%;
+	height: 100vh;
 }
 
-.border{
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 2em;
-    border-radius: 1em;
+.border {
+	background-color: rgba(255, 255, 255, 0.8);
+	padding: 2em;
+	border-radius: 1em;
 }
 
-.btn-primary{
-    background-color: rgb(18, 40, 142);
-    padding: 0.6em;
-    margin-top: 1em;
+.btn-primary {
+	background-color: rgb(18, 40, 142);
+	padding: 0.6em;
+	margin-top: 1em;
 }
 
-.color{
-    color: rgb(18, 40, 142);
+.color {
+	color: rgb(18, 40, 142);
 }
 
-.text-center{
-    margin-bottom: 1em;
+.text-center {
+	margin-bottom: 1em;
 }
