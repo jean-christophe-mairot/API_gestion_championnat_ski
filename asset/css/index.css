@@ -22,3 +22,17 @@ body{
 .text-center{
     margin-bottom: 1em;
 }
+.part_form{
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: space-around;
+    text-align: center;
+   
+}
+.spacement{
+    margin-bottom: 20px;
+    font-size: 1.7rem;
+}
+.all_center{
+    text-align: center;
+}
