@@ -88,19 +88,21 @@ for ($i=1; $i <$highestRow ; $i++) {
     <h1><center>Importation du fichier Excel Résultat</center></h1><br>
         <form action="" method="post" name="frmExcelImport"
             id="frmExcelImport" enctype="multipart/form-data">
-            <div align="center">
+            <div align="center"> 
                 <label>Choisir fichier Excel</label> <input type="file"
                     name="file" id="file" accept=".xls,.xlsx">
                 <button type="submit" id="submit" name="import"
                     class="btn-primary">Importer</button>
-            </div>
+            </div>    
         </form>
+        <br>
+        <div class="d-grid gap-2 all_center">
+            <a href="index.php"><button class="btn btn-primary" type="submit">Retour au Menu</button></a>  
+        </div>
     </div>
     <div id="response"
         class="<?php if(!empty($type)) { echo $type . " display-block"; } ?>"><?php if(!empty($message)) { echo $message; } ?>
     </div>
-    
-
 <?php
 require_once 'inc/footer.php';
 ?>
