@@ -6,7 +6,7 @@ include 'inc/fonctions.php';
 $participants = getParticpant();
 //fonction recup les data de categories
 $categories = getCategorie();
-//fonction recup les data de epreuves
+//function recup les data de epreuves
 $epreuves = getEpreuve();
 
 ?>
@@ -28,7 +28,7 @@ $epreuves = getEpreuve();
                             <?php foreach ($categories as $categorie):?>
                                 <option value="<?=$categorie['id_categorie']?>"><?=$categorie['type']?></option>
                             <?php endforeach ?>
-                        </select>
+                            </select>
                     </div>
                 </div>
                 <div class="all_center ">
@@ -45,4 +45,4 @@ $epreuves = getEpreuve();
                 </div>
             </form>
     </div>
-<?php include 'inc/header.php'; ?>
+<?php include 'inc/footer.php'; ?>
