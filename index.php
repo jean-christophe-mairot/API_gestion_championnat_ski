@@ -24,6 +24,7 @@ require_once ("inc/header.php");
             <label class="form-label fs-5 color fw-bold" for="formFileLg">Photo du Participant</label> <br>  
             <input class="form-control form-control-lg" type="file" name="img_participant"> 
         </div>
+        
         <div class="d-grid gap-2">
             <button class="btn btn-primary" type="submit">Ajouter</button>
         </div>
