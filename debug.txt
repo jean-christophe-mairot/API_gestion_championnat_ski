@@ -1,0 +1,1 @@
+- bug A => quand on valide une competion competitor_proof on n'est pas redirigé vers index

@@ -103,7 +103,7 @@ foreach ($recupIdParticipants as $recupIdParticipant) {
    
    $recupIdEpreuves=$_POST['epreuve_select'];
    $generateEpreuves=getFromGenerateEpreuve($recupIdEpreuves);
-   
+  
    //incrémentation de la colonne D à F
    $colD =$colD+1;
   
@@ -171,7 +171,7 @@ foreach ($recupIdParticipants as $recupIdParticipant) {
 $writer = new Xlsx($spreadsheet);
 //ecrit le fichier dans le directory : là c au même niveau que create_excel.php
 $writer->save('creatXl.xlsx');
-
+header('location:index.php');
 ?>
 
 <!-- contenu -->

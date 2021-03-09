@@ -16,7 +16,7 @@ $epreuves = getEpreuve();
             <div class="part_form">
                 <div>
                     <label class="color spacement" for="epreuve_select">Epreuve: </label>
-                        <select class="form-select" id="epreuve_select"> 
+                        <select class="form-select" name="epreuve_select" id="epreuve_select"> 
                         <?php foreach ($epreuves as $epreuve):?>
                             <option value="<?=$epreuve['id_epreuve']?>"><?=$epreuve['nom_epreuve']?></option> 
                         <?php endforeach ?>
