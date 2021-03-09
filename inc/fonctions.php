@@ -53,6 +53,7 @@ function getCategorie()
     return $annonces_ca;
 }
 
+
 //--------------------------------------------------------
 //------------------Pour le Form qui génère --------------
 //---------------la feuille excel de l'épreuve------------
