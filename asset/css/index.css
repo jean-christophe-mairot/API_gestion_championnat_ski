@@ -1,25 +1,51 @@
-body{
-    background-image: url("../img/ski.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
+body {
+	/* background-image: url("../img/ski.jpg");
+	background-size: cover;
+	background-repeat: no-repeat; */
+}
+.bg-image {
+	background-image: url("../img/ski.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	width: 100%;
+	height: 100vh;
 }
 
-.border{
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 2em;
-    border-radius: 1em;
+.outer-container{
+    display: flex;
+    background-color:  rgba(255, 255, 255, 0.8);
 }
 
-.btn-primary{
-    background-color: rgb(18, 40, 142);
-    padding: 0.6em;
-    margin-top: 1em;
+.border {
+	background-color: rgba(255, 255, 255, 0.8);
+	padding: 2em;
+	border-radius: 1em;
 }
 
-.color{
-    color: rgb(18, 40, 142);
+.btn-primary {
+	background-color: rgb(18, 40, 142);
+	padding: 0.6em;
+	margin-top: 1em;
 }
 
-.text-center{
-    margin-bottom: 1em;
+.color {
+	color: rgb(18, 40, 142);
+}
+
+.text-center {
+	margin-bottom: 1em;
+}
+.part_form{
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: space-around;
+    text-align: center;
+   
+}
+.spacement{
+    margin-bottom: 20px;
+    font-size: 1.7rem;
+}
+.all_center{
+    text-align: center;
 }

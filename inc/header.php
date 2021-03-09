@@ -13,4 +13,5 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <div class="bg-image">
+     
