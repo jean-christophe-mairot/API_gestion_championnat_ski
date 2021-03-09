@@ -35,6 +35,9 @@ require_once ("inc/header.php");
                 <button class="btn btn-primary" type="submit">Ajouter</button>
             </div>
         </form>
+        <div class="d-grid gap-2 all_center">
+            <a href="index.php"><button class="btn btn-primary" type="submit">Retour au Menu</button></a>  
+        </div>
     </div>
 <?php
 require_once ("inc/footer.php");
