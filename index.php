@@ -25,12 +25,11 @@ require_once 'inc/header.php';
         </a>          
     </div>
     <div >
-        <a href="resultat.php" class="d-grid gap-2">
+        <a href="result.php" class="d-grid gap-2">
             <button class="btn btn-primary" type="submit">Resultat</button>
         </a>  
     </div>
 </div>
-
 <?php
 require_once 'inc/footer.php';
 ?>

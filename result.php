@@ -24,7 +24,7 @@ echo "je suis la page de read excel";
 
 
 //utilisation de la fonction getAll 
-$allParticipants= getAll();
+$allParticipants= getResult();
 //-----------------------------------------------------------------
 //-------------------mettre la requete de yoannnn -----------------
 //-----------------------------------------------------------------
@@ -39,10 +39,12 @@ $allParticipants= getAll();
 
 <!-- test affichage des participants -->
 <?php foreach($allParticipants as $allParticipant): extract ($allParticipant)?>
+<p><?=$nom_epreuve?></p>
+<p><?=$type?></p>
 <p><?=$nom_participant?></p>
 <p><?=$prenom_participant?></p>
-<p><?=$birth_participant?></p>
-<p><?=$mail_participant?></p>
+<p><?=$meilleur_temp?></p>
+
 <?php endforeach;?>
 <div class="d-grid gap-2 all_center">
   <a href="index.php"><button class="btn btn-primary" type="submit">Retour au Menu</button></a>  
