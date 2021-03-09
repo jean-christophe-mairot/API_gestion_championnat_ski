@@ -15,6 +15,8 @@
   background-color: rgba(255, 255, 255, 0.8);
   padding: 2em;
   border-radius: 1em;
+  margin: 0 auto;
+  width: 30em;
 }
 
 .btn-primary {
@@ -42,4 +44,16 @@
 }
 .all_center {
   text-align: center;
+}
+
+.display{
+  display: flex;
+  justify-content: center;
+  padding-top: 20em;
+}
+
+@media (max-width: 425px){
+  .border{
+    width: 18em;
+  }
 }
