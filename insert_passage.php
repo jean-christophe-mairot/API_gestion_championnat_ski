@@ -78,7 +78,7 @@ for ($i=1; $i <$highestRow ; $i++) {
 
 }
     }
-    header('location : result.php');
+    header('location: result.php');
 }
 ?> 
 
