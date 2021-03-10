@@ -36,7 +36,7 @@ $epreuves = getEpreuve();
                     <div class="part_form">
                         <?php foreach ($participants as $participant): extract($participant) ?>
                             <p><?=$nom_participant.' '.$prenom_participant?></p>
-                            <input type="checkbox" value="<?=$id_participant?>" name="id_participant[]">
+                            <input type="checkbox" value="<?=$id_participant?>" name="id_participant[]" required>
                         <?php endforeach ?>
                     </div>
             </div>
