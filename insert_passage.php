@@ -84,20 +84,26 @@ for ($i=1; $i <$highestRow ; $i++) {
 
 <!-- html -->
 <body>
+    <!-- Permet d'etre positionner au millieu et border est l'arriere plan -->
     <div class="position-absolute top-50 start-50 translate-middle border">
-    <h1><center>Importation du fichier Excel Résultat</center></h1><br>
-        <form action="" method="post" name="frmExcelImport"
-            id="frmExcelImport" enctype="multipart/form-data">
-            <div align="center"> 
-                <label>Choisir fichier Excel</label> <input type="file"
-                    name="file" id="file" accept=".xls,.xlsx">
-                <button type="submit" id="submit" name="import"
-                    class="btn-primary">Importer</button>
-            </div>    
+    <!-- Titre -->
+    <h1 class="all_center color">Importation du fichier Excel Résultat</h1><br>
+    <!-- Formulaire -->
+        <form action="" method="post" name="frmExcelImport" class="row g-3 container" id="frmExcelImport" enctype="multipart/form-data">
+                <div>
+                    <!-- Titre input -->
+                    <label class="form-label fs-5 color fw-bold" for="formFileLg">Choisir fichier Excel</label>
+                    <!-- Input file -->
+                    <input type="file" name="file" id="file" accept=".xls,.xlsx" class="form-control form-control-lg">
+                </div>
+                <!-- Button importer -->
+                <div class="d-grid gap-2">
+                    <button type="submit" id="submit" name="import" class="btn-primary">Importer</button>
+                </div>                  
         </form>
-        <br>
-        <div class="d-grid gap-2 all_center">
-            <a href="index.php"><button class="btn btn-primary" type="submit">Retour au Menu</button></a>  
+        <!-- Button retour au menu -->
+        <div class="row g-3 container">
+            <a href="index.php" class="d-grid gap-2 return_a"><button class="btn btn-primary" type="submit">Retour au Menu</button></a>  
         </div>
     </div>
     <div id="response"

@@ -3,7 +3,7 @@ require_once 'inc/header.php';
 ?>
 
 <div class="position-absolute top-50 start-50 translate-middle border menuIndex">
-    <h1 class="text-center color">API</h1>
+    <h1 class="text-center color">CHAMPIONNAT DE SKI</h1>
     <div >
         <a href="create_Competitor.php" class="d-grid gap-2">
            <button class="btn btn-primary" type="submit">Ajouter des Participant</button> 
@@ -16,12 +16,12 @@ require_once 'inc/header.php';
     </div>
     <div>
         <a href="competitor_proof.php" class="d-grid gap-2">
-            <button class="btn btn-primary" type="submit">Ajouter d'un participant à une épreuve</button>
+            <button class="btn btn-primary" type="submit">Ajouter un participant à une épreuve</button>
         </a>    
     </div>
     <div>
         <a href="insert_passage.php" class="d-grid gap-2">
-            <button class="btn btn-primary" type="submit">Importer l'exel</button>
+            <button class="btn btn-primary" type="submit">Importer l'excel</button>
         </a>          
     </div>
     <div >

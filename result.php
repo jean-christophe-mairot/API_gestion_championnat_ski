@@ -46,9 +46,16 @@ $allParticipants= getResult();
 <p><?=$meilleur_temp?></p>
 
 <?php endforeach;?>
-<div class="d-grid gap-2 all_center">
-  <a href="index.php"><button class="btn btn-primary" type="submit">Retour au Menu</button></a>  
+<!-- Permet d'etre positionner au millieu et border est l'arriere plan -->
+<div class="position-absolute top-50 start-50 translate-middle border">
+  <!-- Permet de mettre dans un container -->
+  <div class="row g-3 container">
+    <!-- Button return -->
+    <a href="index.php" class="d-grid gap-2 return_a">
+      <button class="btn btn-primary" type="submit">Retour au Menu</button></a>  
+  </div>
 </div>
+
 <!-- contenu -->
 <?php
 require_once 'inc/footer.php';

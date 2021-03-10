@@ -11,6 +11,7 @@
 	background-color: rgba(255, 255, 255, 0.8);
 }
 
+/* Arrière plan des formulaire */
 .border {
 	background-color: rgba(255, 255, 255, 0.8);
 	padding: 2em;
@@ -19,6 +20,7 @@
 	width: 40em;
 }
 
+/* couleur des button */
 .btn-primary {
 	background-color: rgb(18, 40, 142);
 	padding: 0.6em;
@@ -46,18 +48,18 @@
 	text-align: center;
 }
 
-.display {
-	display: flex;
-	justify-content: center;
-	padding-top: 20em;
-}
-
 @media (max-width: 425px) {
 	.border {
 		width: 18em;
 	}
 }
+
 /* -------------- menu index------------------ */
 .menuIndex a {
+	text-decoration: none;
+}
+
+/* Enlever le surlignement de la balise a  */
+.return_a{
 	text-decoration: none;
 }
