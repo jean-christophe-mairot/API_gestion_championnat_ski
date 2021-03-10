@@ -2,7 +2,7 @@
 require_once 'inc/header.php';
 ?>
 
-<div class="position-absolute top-50 start-50 translate-middle border">
+<div class="position-absolute top-50 start-50 translate-middle border menuIndex">
     <h1 class="text-center color">API</h1>
     <div >
         <a href="create_Competitor.php" class="d-grid gap-2">
