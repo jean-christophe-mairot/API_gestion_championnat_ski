@@ -20,16 +20,16 @@ require_once ("inc/header.php");
                 <input class="form-control" type="text" id="floatingInput" name="nom_epreuve">
                 <label for="floatingInput" class="color">Entrez votre Epreuve</label> <br>
             </div>
-            <div class=" form-floating col-md-6">    
+            <div class="form-floating col-md-6">    
                 <input class="form-control" type="date" name="date_epreuve">
                 <label for="floatingInput" class="color">Date de l'épreuve</label> <br>
             </div>
-            <div class=" form-floating col-md-6">    
-                <label for="floatingInput" class="color">Catégories</label> <br><br>
-                    <select class="form-select" name="id_categorie" required>
-                        <option value="1">M1</option>
-                        <option value="2">M2</option>
-                    </select>
+            <div class="form-floating col-md-6">    
+                <select class="form-select" name="id_categorie" required>
+                    <option value="1">M1</option>
+                    <option value="2">M2</option>
+                </select> 
+                <label for="floatingInput" class="color">Catégories</label> <br>
             </div>
             <div class="d-grid gap-2">
                 <button class="btn btn-primary" type="submit">Ajouter</button>
