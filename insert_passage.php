@@ -18,7 +18,7 @@ if (isset($_POST["import"])) {
         move_uploaded_file($_FILES['file']['tmp_name'], $targetPath);
 $reader = \PhpOffice\PhpSpreadsheet\IOFactory::createReader('Xlsx');
 $reader->setReadDataOnly(TRUE);
-$spreadsheet = $reader->load("creatXlresult.xlsx");
+$spreadsheet = $reader->load("uploads/creatXlresult.xlsx");
 
 $worksheet = $spreadsheet->getActiveSheet();
 // recup le haut du row et  highest row and column numbers referenced in the worksheet
@@ -78,6 +78,7 @@ for ($i=1; $i <$highestRow ; $i++) {
 
 }
     }
+    header('location: result.php');
 }
 ?> 
 

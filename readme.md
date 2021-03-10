@@ -41,6 +41,7 @@
 
 **Liens utiles**
 
+- https://theconversation.com/changer-les-cours-et-si-les-etudiants-apprenaient-les-uns-des-autres-107474
 - https://trello.com/b/CZlpTirh/api/timeline
 - https://phpspreadsheet.readthedocs.io/en/latest/
 - https://www.generatedata.com/
