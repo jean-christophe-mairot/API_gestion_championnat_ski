@@ -3,7 +3,7 @@ session_start();
 require_once ("inc/header.php");
 ?>
     <div class="position-absolute top-50 start-50 translate-middle border">
-        <h1 class="text-center color">Formulaire Epreuve</h1>
+        <h1 class="text-center color">Ajouter une Epreuve</h1>
         <form method="POST" action="crud_Proof.php"  class="row g-3 container">
             <!-- error message -->
             <?php
