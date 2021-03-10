@@ -34,11 +34,15 @@ $epreuves = getEpreuve();
                 </div>
             <div class="form-check">
                 <label class="spacement color fw-bold" for="Participant">Participant à cette épreuve:</label>
-                    <div class="part_form">
-                        <?php foreach ($participants as $participant): extract($participant) ?>
-                            <p><?=$nom_participant.' '.$prenom_participant?></p>
-                            <input type="checkbox" class="form-check-input" value="<?=$id_participant?>" name="id_participant[]" required>
-                        <?php endforeach ?>
+                    <div class="part_form ">
+                        <div class="dflex">
+                            <?php foreach ($participants as $participant): extract($participant) ?>
+                            <div class="checkParticipant">
+                                <input type="checkbox" class="" value="<?=$id_participant?>" name="id_participant[]" required>
+                                <p><?=$nom_participant.' '.$prenom_participant?></p>
+                            </div>
+                            <?php endforeach ?>
+                        </div>
                     </div>
             </div>
             <div class="d-grid gap-2">
