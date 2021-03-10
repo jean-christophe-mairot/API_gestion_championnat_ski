@@ -22,7 +22,7 @@ $epreuves = getEpreuve();
                         <?php endforeach ?>
                         </select>
                 </div>
-                <div>
+                <div class="test">
                     <label class="spacement color" for="categorie-select">Catégorie: </label>
                         <select class="form-select" name="categorie-select" id="categorie-select"> 
                         <?php foreach ($categories as $categorie):?>
