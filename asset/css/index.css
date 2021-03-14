@@ -1,86 +1,89 @@
 .bg-image {
-	background-image: url("../img/ski.jpg");
-	background-size: cover;
-	background-repeat: no-repeat;
-	width: 100%;
-	height: 100vh;
+  background-image: url("../img/ski.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh;
 }
 
 .outer-container {
-	display: flex;
-	background-color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.8);
 }
 
 /* Arrière plan des formulaire */
 .border {
-	background-color: rgba(255, 255, 255, 0.8);
-	padding: 2em;
-	border-radius: 1em;
-	margin: 0 auto;
-	width: 40em;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 2em;
+  border-radius: 1em;
+  margin: 0 auto;
+  width: 40em;
 }
 
 /* couleur des button */
 .btn-primary {
-	background-color: rgb(18, 40, 142);
-	padding: 0.6em;
-	margin-top: 1em;
+  background-color: rgb(18, 40, 142);
+  padding: 0.6em;
+  margin-top: 1em;
 }
 
 .color {
-	color: rgb(18, 40, 142);
+  color: rgb(18, 40, 142);
 }
 
 .text-center {
-	margin-bottom: 1em;
+  margin-bottom: 1em;
 }
 .part_form {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-around;
-	text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  text-align: center;
 }
 .spacement {
-	margin-bottom: 20px;
-	font-size: 1.7rem;
+  margin-bottom: 20px;
+  font-size: 1.7rem;
 }
 .all_center {
-	text-align: center;
+  text-align: center;
 }
 
 @media (max-width: 425px) {
-	.border {
-		width: 18em;
-	}
+  .border {
+    width: 18em;
+  }
 }
 
 /* -------------- menu index------------------ */
 .menuIndex a {
-	text-decoration: none;
+  text-decoration: none;
 }
 
 /* Enlever le surlignement de la balise a  */
 .return_a {
-	text-decoration: none;
+  text-decoration: none;
 }
 
 /* --------------- ajout part epreuve---------  */
 .checkParticipant {
-	display: flex;
-	border: 1px rgba(59, 58, 58, 0.52) solid;
-	width: 200px;
-	border-radius: 15px;
-	padding-top: 10px;
-	margin: 5px 0;
+  display: flex;
+  border: 1px rgba(59, 58, 58, 0.52) solid;
+  width: 200px;
+  border-radius: 15px;
+  padding-top: 10px;
+  margin: 5px 0;
 }
 .checkParticipant input {
-	margin-right: 10px;
-	margin-top: 6px;
-	margin-left: 5px;
+  margin-right: 10px;
+  margin-top: 6px;
+  margin-left: 5px;
 }
 .dflex {
-	display: flex;
-	justify-content: space-between;
-	flex-wrap: wrap;
-	width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.invisible {
+  display: none;
 }

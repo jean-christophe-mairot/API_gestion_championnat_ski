@@ -77,6 +77,14 @@ function getFromGenerateCategorie($id_categorie) {
     $allcategories = $result->fetchall();
     return $allcategories;
 }
+//fonction de delete de la table passage
+function deleteAllPassage() {
+    $bdd = getBdd();
+    $result = $bdd->query("DELETE * FROM `passages`");
+    $deleteAllPassage = $result->fetchall();
+    return $deleteAllPassage;
+}
+
 
 
 // fonction de test

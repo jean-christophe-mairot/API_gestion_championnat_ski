@@ -19,6 +19,11 @@ require_once 'inc/header.php';
             <button class="btn btn-primary" type="submit">Ajouter un participant à une épreuve</button>
         </a>    
     </div>
+    <div >
+        <a href="uploads/creatXl.xlsx" class="d-grid gap-2" download="creatXl.xlsx">
+            <button class="btn btn-primary" type="submit">Download de l'epreuve à remplir</button>
+        </a>  
+    </div>
     <div>
         <a href="insert_passage.php" class="d-grid gap-2">
             <button class="btn btn-primary" type="submit">Importer l'excel</button>
@@ -29,6 +34,7 @@ require_once 'inc/header.php';
             <button class="btn btn-primary" type="submit">Resultat</button>
         </a>  
     </div>
+    
 </div>
 <?php
 require_once 'inc/footer.php';

@@ -3,8 +3,15 @@ include 'inc/bdd.php';
 include 'inc/header.php';
 require 'vendor/autoload.php';
 
+
 if (isset($_POST["import"])) {
 
+    //delete la table des resultat
+    $bdd = getBdd();
+    $result = $bdd->query("DELETE FROM `passages`");
+    $deleteAllPassage = $result->fetchall();
+
+   
     $allowedFileType = [
         'application/vnd.ms-excel',
         'text/xls',
@@ -16,22 +23,24 @@ if (isset($_POST["import"])) {
 
         $targetPath = 'uploads/' . $_FILES['file']['name'];
         move_uploaded_file($_FILES['file']['tmp_name'], $targetPath);
-$reader = \PhpOffice\PhpSpreadsheet\IOFactory::createReader('Xlsx');
-$reader->setReadDataOnly(TRUE);
-$spreadsheet = $reader->load("uploads/creatXlresult.xlsx");
+        var_dump($targetPath);
 
-$worksheet = $spreadsheet->getActiveSheet();
-// recup le haut du row et  highest row and column numbers referenced in the worksheet
-$highestRow = $worksheet->getHighestRow(); // e.g. 10
-$highestColumn = $worksheet->getHighestColumn(); // e.g 'F'
-$highestColumnIndex = \PhpOffice\PhpSpreadsheet\Cell\Coordinate::columnIndexFromString($highestColumn); // e.g. 5
+        $reader = \PhpOffice\PhpSpreadsheet\IOFactory::createReader('Xlsx');
+        $reader->setReadDataOnly(TRUE);
+        $spreadsheet = $reader->load("$targetPath");
+
+        $worksheet = $spreadsheet->getActiveSheet();
+        // recup le haut du row et  highest row and column numbers referenced in the worksheet
+        $highestRow = $worksheet->getHighestRow(); // e.g. 10
+        $highestColumn = $worksheet->getHighestColumn(); // e.g 'F'
+        $highestColumnIndex = \PhpOffice\PhpSpreadsheet\Cell\Coordinate::columnIndexFromString($highestColumn); // e.g. 5
 
 //-------------------------------------------------------------------------------------------------------------------
 //------------------------------------------- TABLEAU HTML ----------------------------------------------------------
 //-------------------------------------------------------------------------------------------------------------------
 
 
-echo '<table>' . "\n";
+echo '<table class="invisible">' . "\n";
 $values=[];
 for ($row = 1; $row <= $highestRow; ++$row) {
     $ligne=[];
@@ -78,7 +87,8 @@ for ($i=1; $i <$highestRow ; $i++) {
 
 }
     }
-    header('location: result.php');
+    //header('location: result.php');
+   echo "<script type='text/javascript'>document.location.replace('result.php');</script>";
 }
 ?> 
 

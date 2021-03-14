@@ -38,7 +38,7 @@ $epreuves = getEpreuve();
                         <div class="dflex">
                             <?php foreach ($participants as $participant): extract($participant) ?>
                             <div class="checkParticipant">
-                                <input type="checkbox" class="" value="<?=$id_participant?>" name="id_participant[]" required>
+                                <input type="checkbox" class="" value="<?=$id_participant?>" name="id_participant[]" >
                                 <p><?=$nom_participant.' '.$prenom_participant?></p>
                             </div>
                             <?php endforeach ?>

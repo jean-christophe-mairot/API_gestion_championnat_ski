@@ -171,7 +171,9 @@ foreach ($recupIdParticipants as $recupIdParticipant) {
 $writer = new Xlsx($spreadsheet);
 //ecrit le fichier dans le directory : là c au même niveau que create_excel.php
 $writer->save('uploads/creatXl.xlsx');
-header('location:index.php');
+//header('location:index.php');
+echo "<script type='text/javascript'>document.location.replace('index.php');</script>";
+
 ?>
 
 <!-- contenu -->
