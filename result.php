@@ -38,13 +38,35 @@ $allParticipants= getResult();
 
 <!-- test affichage des participants -->
 <?php foreach($allParticipants as $allParticipant): extract ($allParticipant)?>
+
 <p><?=$nom_epreuve?></p>
 <p><?=$type?></p>
 <p><?=$nom_participant?></p>
 <p><?=$prenom_participant?></p>
 <p><?=$meilleur_temp?></p>
 
+<div class="display">
+  <div id="podium">
+    <h1><?=$nom_participant?> <?=$prenom_participant?></h1>
+      <p><?=$meilleur_temp?></p>
+      <img src="asset/img/argent.png" alt="">
+  </div>
+  <div id="podium1">
+    <h1><?=$nom_participant?> <?=$prenom_participant?></h1>
+    <p><?=$meilleur_temp?></p>
+    <img src="asset/img/or.png" alt="">
+  </div>
+  <div id="podium2">
+    <h1><?=$nom_participant?> <?=$prenom_participant?></h1>
+    <p><?=$meilleur_temp?></p>
+    <img src="asset/img/bronze.png" alt="">
+  </div>
+</div>
+
 <?php endforeach;?>
+
+
+
 <!-- Permet d'etre positionner au millieu et border est l'arriere plan -->
 <div class="position-absolute top-50 start-50 translate-middle border">
   <!-- Permet de mettre dans un container -->

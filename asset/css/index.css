@@ -87,3 +87,41 @@
 .invisible {
   display: none;
 }
+
+/* ------------------ PODIUM --------------------- */
+
+.display{
+	display: block;
+	justify-content: center;
+}
+
+
+#podium{
+	display: block;
+	margin-right: 5em;
+	margin-top: 5em;
+}
+
+#podium1{
+	display: block;
+	
+	
+}
+
+#podium2{
+	display: block;
+	margin-top: 5em;
+	margin-left: 5em;
+}
+
+#resultat{
+	position: absolute;
+}
+
+h1{
+	text-align: center;
+}
+
+p{
+	text-align: center;
+}
