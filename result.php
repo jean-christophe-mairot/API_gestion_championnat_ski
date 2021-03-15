@@ -35,33 +35,60 @@ $allParticipants= getResult();
 //-----------------------------------------------------------------
 //-----------------------------------------------------------------
 ?> 
-
+<div class="medaille container">
+  <div class="gold">
+    <img src="asset/img/or.png" alt="">
+  </div>
+  <div class="silver">
+    <img src="asset/img/argent.png" alt="">
+  </div>
+  <div class="once">
+    <img src="asset/img/bronze.png" alt="">
+  </div>
+</div>
 <!-- test affichage des participants -->
+<!-- LA foreach ne peut pas afficher comme tu la fait ou alors il faut passer par autre chose peut etre plusieur foreach ou avec d'autre requete sql chpant des position particulairevoili voulou  -->
 <?php foreach($allParticipants as $allParticipant): extract ($allParticipant)?>
 
-<p><?=$nom_epreuve?></p>
+
+<div class="display container">
+  <div id="podium">
+    <div>
+      <h1><?=$nom_participant?> <?=$prenom_participant?></h1>
+    </div>
+    <div>
+      <p><?=$meilleur_temp?></p>
+    </div>
+  </div>
+</div>
+
+
+<!-- <p><?=$nom_epreuve?></p>
 <p><?=$type?></p>
 <p><?=$nom_participant?></p>
 <p><?=$prenom_participant?></p>
 <p><?=$meilleur_temp?></p>
 
+
+
+
 <div class="display">
   <div id="podium">
     <h1><?=$nom_participant?> <?=$prenom_participant?></h1>
       <p><?=$meilleur_temp?></p>
-      <img src="asset/img/argent.png" alt="">
+      
   </div>
   <div id="podium1">
     <h1><?=$nom_participant?> <?=$prenom_participant?></h1>
     <p><?=$meilleur_temp?></p>
-    <img src="asset/img/or.png" alt="">
+    <img src="asset/img/argent.png" alt="">
   </div>
   <div id="podium2">
     <h1><?=$nom_participant?> <?=$prenom_participant?></h1>
     <p><?=$meilleur_temp?></p>
     <img src="asset/img/bronze.png" alt="">
   </div>
-</div>
+</div> -->
 
 <?php endforeach;?>
 
