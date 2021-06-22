@@ -179,5 +179,5 @@ echo "<script type='text/javascript'>document.location.replace('index.php');</sc
 <!-- contenu -->
 
 <?php
-require_once "inc/footer.php";
+require_once "inc/footer.php";   ²
 ?>

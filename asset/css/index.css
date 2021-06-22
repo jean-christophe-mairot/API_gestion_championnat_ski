@@ -90,50 +90,51 @@
 
 /* ------------------ PODIUM --------------------- */
 
-.displayre{
-	display: flex;
-	justify-content: space-around;
+.displayre {
+  display: flex;
+  justify-content: space-around;
 }
 
-
-#podium{
-	display: block;
-	/* margin-right: 5em;
+#podium {
+  display: block;
+  /* margin-right: 5em;
 	margin-top: 5em; */
 }
 
-#podium1{
-	display: block;
-	
-	
+#podium1 {
+  display: block;
 }
 
-#podium2{
-	display: block;
-	margin-top: 5em;
-	margin-left: 5em;
+#podium2 {
+  display: block;
+  margin-top: 5em;
+  margin-left: 5em;
 }
 
-#resultat{
-	position: absolute;
+#resultat {
+  position: absolute;
 }
 
-h1{
-	text-align: center;
+h1 {
+  text-align: center;
 }
 
-p{
-	text-align: center;
+p {
+  text-align: center;
 }
 
-.medaille{
+.medaille {
   display: flex;
   justify-content: space-around;
   padding-top: 250px;
 }
-.silver{
+.silver {
   margin-top: 150px;
 }
-.once{
+.once {
   margin-top: 250px;
+}
+/* class test */
+.test {
+  border: 2px solid red;
 }
